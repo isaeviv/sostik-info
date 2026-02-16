@@ -8,6 +8,10 @@ targets:
   sostik-info:
     main: src/sostik-info.cr
 
+dependencies:
+  myhtml:
+    github: kostya/myhtml
+
 crystal: '>= 1.16.2'
 
 license: MIT
