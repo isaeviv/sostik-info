@@ -1,0 +1,13 @@
+name: sostik-info
+version: 0.1.0
+
+authors:
+  - Илья Исаев <isaeviv@vivaldi.net>
+
+targets:
+  sostik-info:
+    main: src/sostik-info.cr
+
+crystal: '>= 1.16.2'
+
+license: MIT
