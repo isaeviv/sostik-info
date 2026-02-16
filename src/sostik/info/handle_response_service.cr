@@ -18,13 +18,7 @@ module Sostik::Info
     end
 
     private def handle_ok_response
-      if @response.headers["Content-Encoding"]? == "gzip"
-        Compress::Gzip::Reader.open(IO::Memory.new(@response.body)) do |gzip|
-          return gzip.gets_to_end
-        end
-      else
-        return @response.body
-      end
+      ParseTranslationsService.new(@response.body).call
     end
 
     private def handle_redirected_response
