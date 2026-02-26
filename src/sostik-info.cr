@@ -10,8 +10,11 @@ module Sostik::Info
   VERSION = "0.1.0"
 
   def self.run
-    word = ARGV[0]? || "ит"
-    GetTranslateService.new(word).call
+    if ARGV.any?
+      GetTranslateService.new(ARGV[0]).call
+    else
+      puts("Передайте слово для перевода в качестве аргумента")
+    end
   end
 end
 
