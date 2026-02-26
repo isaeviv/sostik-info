@@ -1,27 +1,83 @@
 # sostik-info
 
-TODO: Write a description here
+Консольная утилита для переводов слов с хакасского на русский при помощи сайта [sostik.info](http://sostik.info)
 
-## Installation
+## Установка
 
-TODO: Write installation instructions here
+Для работы утилиты необходимо наличие установленного компилятора [Crystal](https://crystal-lang.org/install/).
 
-## Usage
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone git@github.com:isaeviv/sostik-info.git 
+   cd sostik-info
+   ```
 
-TODO: Write usage instructions here
+2. **Установите зависимости:**
+   ```bash
+   shards install
+   ```
 
-## Development
+3. **Скомпилируйте проект:**
+   ```bash
+   crystal build src/sostik-info.cr -o sostik-info
+   ```
 
-TODO: Write development instructions here
+4. **Добавьте в PATH (опционально):**
+   Чтобы вызывать утилиту из любой директории, переместите бинарный файл:
+   ```bash
+   sudo mv sostik-info /usr/local/bin/
+   ```
 
-## Contributing
+## Использование
 
-1. Fork it (<https://github.com/your-github-user/sostik-info/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Утилита принимает искомое слово в качестве аргумента.
 
-## Contributors
+**Запуск без компиляции (для разработки):**
+```bash
+crystal run src/sostik-info.cr -- <слово>
+```
 
-- [Илья Исаев](https://github.com/your-github-user) - creator and maintainer
+**Запуск скомпилированной версии:**
+```bash
+./sostik-info <слово>
+# или просто
+sostik-info <слово>
+```
+
+**Пример работы:**
+
+```bash
+$ sostik-info ойын                                                                                                                                          ‹ruby-2.7.6@services›
+
+ойын I
+игра; забава 
+
+Примеры:
+пала ойыны  -  детская игра
+футбол ойыны  -  игра в футбол
+________________________
+представление; выступление (художественное); концерт, спектакль 
+
+Примеры:
+ойында аралазарға  -  участвовать в концерте, спектакле
+ойын тимнирге  -  готовить концерт, репетировать
+________________________
+перен. вечеринка 
+
+Примеры:
+ойынға сығарға  -  орғанизовать вечеринку
+________________________
+игра, шутка 
+
+Примеры:
+ол сағаа ойын нимес  -  это тебе не шутка
+ойынға айландырарға  -  обратить в шутку
+ойын пазы  -  в шутку, несерьёзно
+ойын пазы идерге  -  делать что-л. играючи
+⧫ кӱркӱ ойыны  -  токование косачей
+оол ойыны  -  хоровод, устраиваемый в доме жениха
+хыс ойыны  -  девичий хоровод перед свадьбой
+________________________
+
+
+```
